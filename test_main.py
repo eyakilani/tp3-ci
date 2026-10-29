@@ -3,11 +3,20 @@ from main import app
 
 client = TestClient(app)
 
+
 def test_root():
-    assert client.get("/").json() == {"message": "Hello World"}
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "it works !"}
+
 
 def test_addition():
-    assert client.get("/addition?a=2&b=3").json() == {"result": 5}
+    response = client.get("/addition?a=2&b=3")
+    assert response.status_code == 200
+    assert response.json()["result a+b="] == 5
 
-def test_greeting():
-    assert client.get("/greeting?name=Ali").json() == {"message": "Hello Ali"}
+
+def test_soustraction():
+    response = client.get("/soustraction?a=5&b=2")
+    assert response.status_code == 200
+    assert response.json() == {"result a-b=": 3, "developer": "Dev1"}

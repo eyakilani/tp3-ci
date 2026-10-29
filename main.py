@@ -63,3 +63,7 @@ def remove(id: int):
         raise HTTPException(status_code=404, detail="Item introuvable")
     del items[id]
     return {"message": f"Item {id} supprimé", "developer": "Dev1"}
+
+@app.get("/soustraction")
+def soustraction(a: int, b: int):
+    return {"result a-b=": a - b, "developer": "Dev1"}
