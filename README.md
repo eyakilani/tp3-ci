@@ -1,4 +1,4 @@
-# tp3-gitlab-ci
+# tp2-gitlab-fastapi
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/eya-kilani-group/tp3-gitlab-ci.git
+git remote add origin https://gitlab.com/israchemingui123/tp2-gitlab-fastapi.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-* [Set up project integrations](https://gitlab.com/eya-kilani-group/tp3-gitlab-ci/-/settings/integrations)
+* [Set up project integrations](https://gitlab.com/israchemingui123/tp2-gitlab-fastapi/-/settings/integrations)
 
 ## Collaborate with your team
 
