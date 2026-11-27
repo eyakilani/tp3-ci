@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   run-test:
+    needs: pylint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +19,7 @@ jobs:
           name: junit-report
           path: report.xml
   calculate-coverage:
+    needs: pylint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,3 +38,12 @@ jobs:
           path: |
             coverage.xml
             htmlcov/
+  pylint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt pylint
+      - run: pylint main.py test_main.py
